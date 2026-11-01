@@ -1,5 +1,5 @@
 /* App shell only. Sensitive finance records are never added to CacheStorage. */
-const CACHE='wealthtrack-shell-v1';
+const CACHE='wealthtrack-shell-v2';
 const ASSETS=['./','./index.html','./app.mjs','./domain.mjs','./styles.css','./manifest.webmanifest','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('wealthtrack-shell-')&&k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()])));
