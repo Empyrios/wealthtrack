@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+*.json.bak
+*.backup.json
+coverage/

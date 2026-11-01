@@ -1,0 +1,12 @@
+{
+  "name": "wealthtrack",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first UK personal finance tracker",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check site/domain.mjs && node --check site/app.mjs && node --check site/sw.js",
+    "verify": "npm run test && npm run check"
+  }
+}
